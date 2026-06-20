@@ -6,29 +6,6 @@
 @IDE ： PyCharm
 """
 import os
-import sys
-
-def get_project_root() -> str:
-    """自动向上递归查找项目根目录（依据存在utils文件夹判断）"""
-    current = os.path.abspath(__file__)
-    while True:
-        parent_dir = os.path.dirname(current)
-        # 判断当前父目录下是否存在utils文件夹，找到就返回
-        utils_dir = os.path.join(parent_dir, "utils")
-        if os.path.isdir(utils_dir):
-            return parent_dir
-        # 到磁盘根目录还没找到，抛出异常
-        if parent_dir == current:
-            raise FileNotFoundError("未找到包含utils文件夹的项目根目录")
-        current = parent_dir
-
-# 注入路径
-root_path = get_project_root()
-if root_path not in sys.path:
-    sys.path.append(root_path)
-# print("项目根目录：", root_path)
-
-
 
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
@@ -92,7 +69,7 @@ class VectorStoreService:
 
 
         allowed_files_path: list[str] = listdir_with_allowed_type(
-            chroma_conf["data_path"],
+            get_abs_path(chroma_conf["data_path"]),
             tuple(chroma_conf["allow_knowledge_file_type"]),
         )
 
@@ -129,7 +106,7 @@ class VectorStoreService:
                 logger.error(f"[加载知识库]{path}加载失败：{str(e)}", exc_info=True)
                 continue
 
-if "__name__" == "__main__":
+if __name__ == "__main__":
 
     vs = VectorStoreService()
 

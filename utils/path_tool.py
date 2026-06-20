@@ -10,7 +10,6 @@
 """
 import os
 
-
 def get_project_root() -> str:
     """
     获取工程所在的根目录
@@ -37,4 +36,4 @@ def get_abs_path(relative_path: str) -> str:
 
 
 if __name__ == "__main__":
-    print(get_abs_path(("config/conf.txt")))
+    print(get_abs_path(("config\conf.txt")))

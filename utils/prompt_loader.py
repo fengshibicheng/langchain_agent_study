@@ -5,9 +5,9 @@
 @File ： prompt_loader.py
 @IDE ： PyCharm
 """
-from config_handler import prompts_conf
-from path_tool import get_abs_path
-from logger_handler import logger
+from .config_handler import prompts_conf
+from .path_tool import get_abs_path
+from .logger_handler import logger
 
 def load_system_prompts():
     try:

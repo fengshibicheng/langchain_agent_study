@@ -6,7 +6,11 @@
   项目主要实现代码图
 </p>
 
-参考代码地址：
+### 开始体验 start
+`streamlit run app.py`
+
+
+### 参考代码地址：
 #### (一)
 https://github.com/yichunfu5-prog/langchain-rag-agent
 #### (二)
@@ -15,3 +19,5 @@ https://github.com/kongshuilinhua/langchain-agent#
 https://github.com/HanJun27/-LLM-AI-agent-Management-System-
 #### (四)
 https://github.com/zhanghang2017/AI-chat-rag
+
+

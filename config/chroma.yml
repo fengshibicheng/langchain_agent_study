@@ -1,4 +1,4 @@
-colltection_name: agent
+collection_name: agent
 persist_directory: chroma_db
 k: 3
 data_path: data
