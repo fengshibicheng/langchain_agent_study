@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 @Time ： 2026/6/20
-@Auth ： 冯成
+@Auth ： fc
 @File ： react_agent.py
 @IDE ： PyCharm
 """
@@ -14,6 +14,7 @@ from agent.tools.middleware import monitor_tool, log_before_model, report_prompt
 
 
 class ReactAgent:
+
     def __init__(self):
         self.agent = create_agent(
             model=chat_model,
